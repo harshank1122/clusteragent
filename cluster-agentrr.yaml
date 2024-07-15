@@ -7,7 +7,7 @@ spec:
   appName: "clusterAgentAppdTest"
   controllerUrl: "https://enhancedsoftwaresolutions-nfr.saas.appdynamics.com:443"
   account: "enhancedsoftwaresolutions-nfr"
-  # docker image info
+  # docker image
   image: "docker.io/appdynamics/cluster-agent:latest"
   nsToMonitorRegex: appdynamics,applicationdeplyment
   serviceAccountName: appdynamics-cluster-agent
