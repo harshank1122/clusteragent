@@ -1,0 +1,24 @@
+apiVersion: cluster.appdynamics.com/v1alpha1
+kind: Clusteragent
+metadata:
+  name: k8s-cluster-agent
+  namespace: appdynamics
+spec:
+  appName: "clusterAgentAppdTest"
+  controllerUrl: "https://enhancedsoftwaresolutions-nfr.saas.appdynamics.com:443"
+  account: "enhancedsoftwaresolutions-nfr"
+  # docker image info
+  image: "docker.io/appdynamics/cluster-agent:latest"
+  nsToMonitorRegex: appdynamics,applicationdeplyment
+  serviceAccountName: appdynamics-cluster-agent
+  instrumentationMethod: Env 
+  nsToInstrumentRegex: applicationdeplyment
+  appNameStrategy: manual
+  defaultAppName: ecomerecede1
+  #defaultEnv: JAVA_TOOL_OPTIONS	
+  instrumentationRules:
+  - language: java
+    imageInfo:
+        image: docker.io/appdynamics/java-agent:latest
+        agentMountPath: /opt/appdynamics
+        imagePullPolicy: Always
